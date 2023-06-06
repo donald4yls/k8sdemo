@@ -25,7 +25,7 @@ spec:
           image: registry.cn-hangzhou.aliyuncs.com/donald-repo/demo:1.0.1
           imagePullPolicy: Always
           ports:
-            - containerPort: 8080
+            - containerPort: 80
               name: tcp-8080
               protocol: TCP
 ---
@@ -39,9 +39,9 @@ metadata:
 spec:
   ports:
     - name: tcp-8080
-      port: 8080
+      port: 80
       protocol: TCP
-      targetPort: 8080
+      targetPort: 80
   selector:
     app: devops-argocd-test
   sessionAffinity: None

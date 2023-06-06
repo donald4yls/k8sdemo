@@ -396,3 +396,5 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+src/IdentityServer/Furion_IdentityServer.Web.Entry/wwwroot/lib/

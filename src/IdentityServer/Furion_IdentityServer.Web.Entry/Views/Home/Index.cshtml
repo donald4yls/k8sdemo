@@ -1,0 +1,111 @@
+@using System.Diagnostics
+@using IdentityServer4.Extensions
+
+@{ ViewBag.CurrentMenu = "首页";
+    var version = FileVersionInfo.GetVersionInfo(typeof(IdentityServer4.Hosting.IdentityServerMiddleware).Assembly.Location).ProductVersion.Split('+').First(); }
+
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">首页</h1>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<!-- Main content -->
+<div class="content">
+    @if (User.IsAuthenticated())
+    {
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">持久授权</h4>
+                </div>
+                <div class="card-body">
+                    <p>
+                        <span class="fa fa-key fa-4x" title="持久授权" aria-hidden="true"></span>
+                    </p>
+                    <a asp-controller="Grants" asp-action="Index" class="btn btn-lg btn-block btn-primary">持久授权</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">发现文档</h4>
+                </div>
+                <div class="card-body">
+                    <p>
+                        <span class="fa fa-file-archive fa-4x" title="发现文档" aria-hidden="true"></span>
+                    </p>
+                    <a href="~/.well-known/openid-configuration" class="btn btn-lg btn-block btn-outline-primary">发现文档</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">我的个人资料</h4>
+                </div>
+                <div class="card-body">
+                    <p>
+                        <span class="fa fa-user fa-4x" title="我的个人资料" aria-hidden="true"></span>
+                    </p>
+                    <a asp-controller="Manage" asp-action="Index" class="btn btn-lg btn-block btn-primary">我的个人资料</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">我的个人数据</h4>
+                </div>
+                <div class="card-body">
+                    <p>
+                        <span class="fa fa-person-booth fa-4x" title="我的个人数据" aria-hidden="true"></span>
+                    </p>
+                    <a asp-controller="Manage" asp-action="PersonalData" class="btn btn-lg btn-block btn-outline-primary">我的个人数据</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">双因素身份验证</h4>
+                </div>
+                <div class="card-body">
+                    <p>
+                        <span class="fa fa-phone fa-4x" title="双因素身份验证" aria-hidden="true"></span>
+                    </p>
+                    <a asp-controller="Manage" asp-action="TwoFactorAuthentication" class="btn btn-lg btn-block btn-primary">双因素身份验证</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">更改密码</h4>
+                </div>
+                <div class="card-body">
+                    <p>
+                        <span class="fa fa-edit fa-4x" title="更改密码" aria-hidden="true"></span>
+                    </p>
+                    <a asp-controller="Manage" asp-action="ChangePassword" class="btn btn-lg btn-block btn-outline-primary">更改密码</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>}
+</div>

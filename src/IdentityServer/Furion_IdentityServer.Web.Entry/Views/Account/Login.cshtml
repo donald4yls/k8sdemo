@@ -1,0 +1,105 @@
+@{
+    Layout = null;
+}
+@model LoginViewModel
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Furion_IdentityServer | 系统登录</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/lib/fontawesome-free/css/all.min.css">
+    <!-- icheck bootstrap -->
+    <link rel="stylesheet" href="~/lib/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/lib/admin-lte/css/adminlte.css">
+</head>
+<body class="hold-transition login-page">
+    <div class="login-box">
+        <div class="login-logo">
+            <h1>FurionIDS认证中心</h1>
+        </div>
+        <!-- /.login-logo -->
+        <div class="card">
+            <div class="card-body login-card-body">
+                <p class="login-box-msg">账号密码登录</p>
+                <partial name="_ValidationSummary" />
+                @if (Model.EnableLocalLogin)
+                {
+                    <form asp-route="Login">
+                        <input type="hidden" asp-for="ReturnUrl" />
+                        <div class="input-group mb-3">
+                            <input class="form-control" placeholder="Username" asp-for="Username" autofocus>
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-envelope"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="password" class="form-control" placeholder="Password" asp-for="Password" autocomplete="off">
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-lock"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="icheck-primary">
+                                    <input class="form-check-input" asp-for="RememberLogin">
+                                    <label class="form-check-label" asp-for="RememberLogin">
+                                        记住我
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- /.col -->
+                            <div class="col-4">
+                                <button type="submit" name="button" value="login" class="btn btn-primary btn-block">登录</button>
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                    </form>
+                }
+
+                @if (Model.VisibleExternalProviders.Any())
+                {
+                    <div class="social-auth-links text-center mb-3">
+                        <p>- 或者 -</p>
+
+                        @foreach (var provider in Model.VisibleExternalProviders)
+                        {
+                            <a class="btn btn-secondary"
+                               asp-controller="External"
+                               asp-action="Challenge"
+                               asp-route-scheme="@provider.AuthenticationScheme"
+                               asp-route-returnUrl="@Model.ReturnUrl">
+                                @provider.DisplayName
+                            </a>
+                        }
+                    </div>
+                }
+                <!-- /.social-auth-links -->
+
+                @if (!Model.EnableLocalLogin && !Model.VisibleExternalProviders.Any())
+                {
+                    <div class="alert alert-warning">
+                        <strong>Invalid login request</strong>
+                        There are no login schemes configured for this request.
+                    </div>
+                }
+            </div>
+            <!-- /.login-card-body -->
+        </div>
+    </div>
+    <!-- /.login-box -->
+
+    <!-- jQuery -->
+    <script src="~/lib/jquery/dist/jquery.slim.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/lib/admin-lte/js/adminlte.min.js"></script>
+</body>
+</html>

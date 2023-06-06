@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Furion_IdentityServer.Application</name>
+    </assembly>
+    <members>
+        <member name="T:Furion_IdentityServer.Application.SystemService">
+            <summary>
+            Controller注释
+            </summary>
+        </member>
+        <member name="M:Furion_IdentityServer.Application.SystemService.GetDescription">
+            <summary>
+            Action注释
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

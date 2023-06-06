@@ -1,0 +1,33 @@
+{
+  "SpecificationDocumentSettings": {
+    "DocumentTitle": "Furion_IdentityServer | 规范化接口",
+    "GroupOpenApiInfos": [
+      {
+        "Group": "Default",
+        "Title": "规范化接口演示",
+        "Description": "让 .NET 开发更简单，更通用，更流行。",
+        "Version": "1.0.0",
+        "TermsOfService": "https://furion.pro",
+        "Contact": {
+          "Name": "pi's Dad",
+          "Url": "https://gitee.com/zijiaxing",
+          "Email": "362293875@qq.com"
+        },
+        "License": {
+          "Name": "Apache-2.0",
+          "Url": "https://gitee.com/dotnetchina/Furion/blob/rc1/LICENSE"
+        }
+      }
+    ]
+  },
+  "SwaggerConfiguration": {
+    "ApiName": "Furion_IdentityServer | 规范化接口",
+    "ApiVersion": "v1",
+    "ApiBaseUrl": "https://localhost:5001",
+    "IdentityServerBaseUrl": "https://localhost:5001",
+    "OidcSwaggerUIClientId": "mvc",
+    "OidcSwaggerUIClientSecret": "secret",
+    "OidcApiName": "api1",
+    "RequireHttpsMetadata": true
+  }
+}

@@ -1,0 +1,51 @@
+﻿<!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="#" class="brand-link">
+        <img src="~/lib/admin-lte/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light">FurionIDS认证中心</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Sidebar Menu -->
+        <nav class="form-inline mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-item">
+                    <a href="~/" class="@(ViewBag.CurrentMenu == "首页" ? "nav-link active":"nav-link")">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            首页
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="~/diagnostics" class="@(ViewBag.CurrentMenu == "声明" ? "nav-link active":"nav-link")">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            声明
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="~/grants" class="@(ViewBag.CurrentMenu == "授权" ? "nav-link active":"nav-link")">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            授权
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="~/api" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            API
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+</aside>

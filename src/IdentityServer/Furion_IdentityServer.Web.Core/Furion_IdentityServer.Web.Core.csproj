@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <NoWarn>1701;1702;1591</NoWarn>
+    <DocumentationFile>Furion_IdentityServer.Web.Core.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Furion_IdentityServer.Web.Core.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="3.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Furion_IdentityServer.Application\Furion_IdentityServer.Application.csproj" />
+    <ProjectReference Include="..\Furion_IdentityServer.Database.Migrations\Furion_IdentityServer.Database.Migrations.csproj" />
+  </ItemGroup>
+
+</Project>

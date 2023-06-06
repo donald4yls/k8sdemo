@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <NoWarn>1701;1702;1591</NoWarn>
+    <DocumentationFile>Furion_IdentityServer.Core.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Furion_IdentityServer.Core.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Furion" Version="2.10.6" />
+    <PackageReference Include="Furion.Extras.Logging.Serilog" Version="2.10.6" />
+    <PackageReference Include="Furion.Extras.ObjectMapper.Mapster" Version="2.10.6" />
+    <PackageReference Include="IdentityServer4.EntityFramework" Version="4.1.2" />
+  </ItemGroup>
+
+</Project>
