@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<NoWarn>1701;1702;1591</NoWarn>
+	</PropertyGroup>
+
+
+	<ItemGroup>
+		<PackageReference Include="Furion" Version="4.8.8.23" />
+		<PackageReference Include="Furion.Extras.ObjectMapper.Mapster" Version="4.8.8.23" />
+	</ItemGroup>
+
+</Project>

@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+	</PropertyGroup>
+
+
+	<ItemGroup>
+		<ProjectReference Include="..\D.IdentityServer.EntityFramework.Core\D.IdentityServer.EntityFramework.Core.csproj" />
+	</ItemGroup>
+
+</Project>
